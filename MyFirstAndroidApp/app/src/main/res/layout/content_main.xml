@@ -16,6 +16,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hi Afreen!"
-        android:id="@+id/hiAfreen" />
+        android:id="@+id/hiAfreen"
+        android:layout_margin="10dp"
+        android:minWidth="0dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I love Android!"
+        android:id="@+id/textView"
+        android:layout_below="@+id/hiAfreen"
+        android:layout_alignLeft="@+id/hiAfreen"
+        android:layout_alignStart="@+id/hiAfreen"
+        android:background="#53d957"
+        android:minWidth="400dp"
+        android:textColor="#e8ef18" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:onClick="clickFunction"
+        android:nestedScrollingEnabled="false" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textField"
+        android:layout_below="@+id/button"
+        android:layout_marginTop="43dp"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dog"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:src="@drawable/dog1" />
 
 </RelativeLayout>

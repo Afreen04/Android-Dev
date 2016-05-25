@@ -1,29 +1,46 @@
-package com.example.afreen.myfirstandroidapp;
+package com.example.afreen.randomnumberapp;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void clickFunction(View view) {
+    public void checkNumber(View view)
+    {
 
-        ImageView myimage = (ImageView) findViewById(R.id.dog);
-        myimage.setImageResource(R.drawable.dog2);
+        EditText userInput = (EditText) findViewById(R.id.userNumber);
+        int userNumber = Integer.parseInt(userInput.getText().toString());
 
-        Toast.makeText(getApplicationContext(),"Hi Afreen!",Toast.LENGTH_LONG).show();
+        Random randomGenerator = new Random();
+        int RandomNumber = randomGenerator.nextInt(10) + 1;
 
-        EditText myTextField = (EditText) findViewById(R.id.textField);
-        Log.i("TextField value",myTextField.getText().toString());
+        String message = "";
+
+        if(RandomNumber < userNumber)
+        {
+            message = "Your number is higher. The random number was " + Integer.toString(RandomNumber);
+        }
+
+        else if(RandomNumber > userNumber)
+        {
+            message = "Your number is lower. The random number was " + Integer.toString(RandomNumber);
+        }
+
+        else
+        {
+            message = "You guessed correct!";
+        }
+
+        Toast.makeText(getApplicationContext(), message ,Toast.LENGTH_LONG).show();
 
     }
 
